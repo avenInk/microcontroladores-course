@@ -1,0 +1,24 @@
+Programación en C
+	Curso de introducción a C
+	Curso de funciones en C
+	Curso de control de flujo en C
+	
+Fundamentos de redes de internet
+
+Servidores web con HTTP 
+
+Conceptos básicos de electrónica
+
+Fundamentos de desarrollo web (HTML, CSS, JS)
+
+Materiales:
+ESP32
+Cable usb
+Protoboard
+Led RGB Cátodo comun.
+Alambre para protoboard (jumpers dupont)
+Led de baja luminocidad
+Resistencia 220ohms (para el led)
+Resistencias de 10Kohms (para botones)
+Trimpot ó Potenciómetro de 10KOhms.
+Bonotes pequeños (o Micro switch)
