@@ -12,13 +12,13 @@ Conceptos básicos de electrónica
 Fundamentos de desarrollo web (HTML, CSS, JS)
 
 Materiales:
-ESP32
-Cable usb
-Protoboard
-Led RGB Cátodo comun.
-Alambre para protoboard (jumpers dupont)
-Led de baja luminocidad
-Resistencia 220ohms (para el led)
-Resistencias de 10Kohms (para botones)
-Trimpot ó Potenciómetro de 10KOhms.
-Bonotes pequeños (o Micro switch)
+ESP32 
+Cable usb (listo)
+Protoboard (listo)
+Led RGB Cátodo comun. (listo)
+Alambre para protoboard (jumpers dupont) (listo)
+Led de baja luminocidad (listo)
+Resistencia 220ohms (para el led) (listo)
+Resistencias de 10Kohms (para botones) (listo)
+Trimpot ó Potenciómetro de 10KOhms. (listo)
+Bonotes pequeños (o Micro switch) (listo
