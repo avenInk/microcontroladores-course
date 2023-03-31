@@ -21,16 +21,33 @@ int32_t raw_value;
 void app_main(void)
 {
     ledc_timer_config_t ledc_config = {
-        .timer_num = LEDC_TIMER,
+        .timer_num = LEDC_TIMER, //El timer (0,1)
+        .speed_mode = LEDC_MODE, //Velocidad, high/low
+        .freq_hz = 5000, //Frecuencia generada
+        .clk_cfg = LEDC_AUTO_CLK, //No sé XD pero una config automatica del timer
+        .duty_resolution = LEDC_DUTY_RES //Resolución en bits 255 8bits, en este caso 12 bits
+    };//declaramos las configuraciones del timer
+    ledc_timer_config(&ledc_config); //aplicamos las configuraciones
+
+    ledc_channel_config_t ledc_channel = {
+        .channel = LEDC_CHANNEL,
         .speed_mode = LEDC_MODE,
-        .freq_hz = 5000, 
-        .
-    }
+        .timer_sel = LEDC_CHANNEL,
+        .intr_type = LEDC_INTR_DISABLE,
+        .gpio_num = LEDC_OUTPUT,
+        .duty = LEDC_DUTY,
+        .hpoint = LEDC_HPOINT
+    };
+
+    ledc_channel_config(&ledc_channel);
+
     adc2_config_channel_atten(ADC2_CHANNEL_5, ADC_ATTEN_DB_0);
 
     while(1){
         adc2_get_raw(ADC2_CHANNEL_5, ADC_WIDTH_BIT_12, &raw_value);
         printf("Trimpot raw value: %ld\n", raw_value);
-        vTaskDelay(400/ portTICK_PERIOD_MS);
+        ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, raw_value);
+        ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
+        vTaskDelay(100/ portTICK_PERIOD_MS);
     }
 }
