@@ -37,7 +37,20 @@ void app_main(void)
         .gpio_num = LEDC_OUTPUT,
         .duty = LEDC_DUTY,
         .hpoint = LEDC_HPOINT
+
     };
+
+    ledc_channel_config_t channel2_config = {
+        .duty = 3000,
+        .channel = LEDC_CHANNEL_1,
+        .speed_mode = LEDC_HIGH_SPEED_MODE,
+        .hpoint = 0,
+        .intr_type = LEDC_INTR_DISABLE,
+        .gpio_num = 23,
+        .timer_sel = LEDC_TIMER_0
+    };
+
+    ledc_channel_config(&channel2_config);
 
     ledc_channel_config(&ledc_channel);
 
