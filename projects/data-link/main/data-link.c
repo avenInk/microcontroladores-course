@@ -26,5 +26,15 @@ ledc_timer_config_t timer_config = {
 void app_main(){
     ledc_timer_config(&timer_config);
     ledc_channel_config (&channel_config);
+    
+    while(1){
+        vTaskDelay(1000/portTICK_PERIOD_MS);
+        ledc_set_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0, 0);
+        ledc_update_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0);
+        vTaskDelay(1000/portTICK_PERIOD_MS);
+        ledc_set_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0, 100);
+        ledc_update_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0);
+    }
+
 
 }
